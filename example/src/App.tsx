@@ -6,7 +6,7 @@ import { UnityShowView } from 'react-native-unity-show';
 export default function App() {
   return (
     <View style={styles.container}>
-      <UnityShowViewManager color="#32a852" style={styles.box} />
+      <UnityShowView color="#32a852" style={styles.box} />
     </View>
   );
 }
