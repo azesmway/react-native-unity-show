@@ -1,3 +1,9 @@
+# Project under development!!!
+
+- [x] Init project
+- [ ] Build ios version
+- [ ] Build android version
+
 # react-native-unity-show
 
 React Native Module for Unity
