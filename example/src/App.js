@@ -1,16 +1,13 @@
 import * as React from 'react';
-
 import { StyleSheet, View } from 'react-native';
-import { UnityShow } from 'react-native-unity-show';
-
+import MapView from 'react-native-unity-show';
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <UnityShow />
-    </View>
+  return React.createElement(
+    View,
+    { style: styles.container },
+    React.createElement(MapView, null)
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
