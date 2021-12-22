@@ -4,7 +4,10 @@ import {
   UIManager,
   Platform,
   ViewStyle,
+  View,
+  Text,
 } from 'react-native';
+import DeviceInfo from 'react-native-device-info';
 
 const LINKING_ERROR =
   `The package 'react-native-unity-show' doesn't seem to be linked. Make sure: \n\n` +
@@ -19,12 +22,12 @@ type UnityShowProps = {
 
 const ComponentName = 'UnityShowView';
 
-const UnityShowView =
-  UIManager.getViewManagerConfig(ComponentName) != null
-    ? requireNativeComponent<UnityShowProps>(ComponentName)
-    : () => {
-        throw new Error(LINKING_ERROR);
-      };
+// const UnityShowView =
+//   UIManager.getViewManagerConfig(ComponentName) != null
+//     ? requireNativeComponent<UnityShowProps>(ComponentName)
+//     : () => {
+//         throw new Error(LINKING_ERROR);
+//       };
 
 class UnityShow extends React.PureComponent {
   constructor(props: any) {
@@ -33,10 +36,15 @@ class UnityShow extends React.PureComponent {
 
   render() {
     // @ts-ignore
-    const { color, style } = this.props;
+    // const { color, style } = this.props;
 
-    return <UnityShowView color={color} style={style} />;
+    // return <UnityShowView color={color} style={style} />;
+    return (
+      <View>
+        <Text>{DeviceInfo.getUserAgent()}</Text>
+      </View>
+    );
   }
 }
 
-export { UnityShow, UnityShowView };
+export default UnityShow;
