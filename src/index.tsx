@@ -5,9 +5,10 @@ import {
   // Platform,
   // ViewStyle,
   View,
-  Text,
+  NativeModules,
 } from 'react-native';
-import DeviceInfo from 'react-native-device-info';
+
+const { UnityShowUserAgent } = NativeModules;
 
 // const LINKING_ERROR =
 //   `The package 'react-native-unity-show' doesn't seem to be linked. Make sure: \n\n` +
@@ -34,15 +35,23 @@ class UnityShow extends React.PureComponent {
     super(props);
   }
 
+  componentDidMount() {
+    UnityShowUserAgent.getWebViewUserAgent() //asynchronous
+      .then((ua: any) => {
+        console.log('UnityShowUserAgent', ua)
+      })
+      .catch((e: any) => {
+        console.error(e)
+      })
+  }
+
   render() {
     // @ts-ignore
     // const { color, style } = this.props;
 
     // return <UnityShowView color={color} style={style} />;
     return (
-      <View>
-        <Text>{DeviceInfo.getUserAgent()}</Text>
-      </View>
+      <View />
     );
   }
 }

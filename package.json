@@ -46,9 +46,6 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "dependencies": {
-    "react-native-device-info": "^8.4.8"
-  },
   "devDependencies": {
     "@commitlint/config-conventional": "^15.0.0",
     "@react-native-community/eslint-config": "^3.0.1",
