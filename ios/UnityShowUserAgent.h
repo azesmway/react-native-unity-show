@@ -1,4 +1,3 @@
-
 #import <sys/utsname.h>
 
 #if __has_include("RCTBridgeModule.h")

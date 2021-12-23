@@ -15,7 +15,7 @@
     #endif
 }
 
-RCT_EXPORT_MODULE(UnityShowUserAgent);
+RCT_EXPORT_MODULE();
 
 + (BOOL)requiresMainQueueSetup
 {

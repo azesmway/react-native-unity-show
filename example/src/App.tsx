@@ -1,12 +1,18 @@
 import * as React from 'react';
 
-import { StyleSheet, View } from 'react-native';
-import { UnityShow } from 'react-native-unity-show';
+import { StyleSheet, View, Text } from 'react-native';
+import { multiply } from 'react-native-unity-show';
 
 export default function App() {
+  const [result, setResult] = React.useState<number | undefined>();
+
+  React.useEffect(() => {
+    multiply(3, 7).then(setResult);
+  }, []);
+
   return (
     <View style={styles.container}>
-      <UnityShow />
+      <Text>Result: {result}</Text>
     </View>
   );
 }
